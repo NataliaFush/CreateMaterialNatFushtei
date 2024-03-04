@@ -1,0 +1,52 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Create Material</h1>
+    <form method="post">
+        @* <div asp-validation-summary="All"></div> *@
+        <div>
+@* 
+            <div>
+                <label asp-for="ItemCode"></label>
+                <input asp-for="Input.Name">
+                <span asp-validation-for="Input.Name"></span>
+            </div>
+            <div>
+                <label asp-for="Input.Age"></label>
+                <input type="number" asp-for="Input.Age">
+                <span asp-validation-for="Input.Age"></span>
+            </div>
+            <div>
+                <label asp-for="Input.Email"></label>
+                <input asp-for="Input.Email" id="author-email-id" oninput="ChangeEmail(event)" />
+                <span class="loader d-none" id="email-loader"></span>
+                <span class="d-none field-validation-error" id="email-loader-error">This email is used</span>
+                <span asp-validation-for="Input.Email"></span>
+            </div>
+            <div>
+
+                <label asp-for="Input.Password"></label>
+                <input type="password" asp-for="Input.Password">
+                <span asp-validation-for="Input.Password"></span>
+                <br>
+            </div>
+            <div>
+                <label asp-for="Input.ConfirmPassword"></label>
+                <input type="password" asp-for="Input.ConfirmPassword">
+                <span asp-validation-for="Input.ConfirmPassword"></span>
+                <br>
+            </div>
+            <div>
+                <input asp-for="Input.Id" />
+            </div>
+            <div>
+                <input type="submit" value="Login!">
+
+            </div> *@
+        </div>
+    </form>
+</div>
