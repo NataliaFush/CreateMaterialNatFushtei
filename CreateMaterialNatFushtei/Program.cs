@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using DataBase;
+using DataBase.Repositories;
+using Core.Interfaces.Repositories;
+using Core.Interfaces.Services;
+using Core.Services;
 
 namespace CreateMaterialNatFushtei
 {
@@ -13,6 +17,10 @@ namespace CreateMaterialNatFushtei
             builder.Services.AddRazorPages();
             builder.Services.AddDbContext<MyDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("RazorPagesConnection") ?? throw new InvalidOperationException("Connection string 'RazorPagesContext' not found.")));
+            builder.Services.AddTransient<IItemRepository, ItemRepository>();
+            builder.Services.AddTransient<IItemService, ItemService>();
+            builder.Services.AddTransient<ITaxRepository, TaxRepository>();
+            builder.Services.AddTransient<ITaxService, TaxService>();
 
 
 

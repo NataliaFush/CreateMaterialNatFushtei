@@ -1,7 +1,7 @@
 ﻿@page
-@model IndexModel
+@model CreateMaterialNatFushtei.Pages.CreateItem
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Create Item";
 }
 
 <div class="text-center">
@@ -9,44 +9,79 @@
     <form method="post">
         @* <div asp-validation-summary="All"></div> *@
         <div>
-@* 
             <div>
-                <label asp-for="ItemCode"></label>
-                <input asp-for="Input.Name">
-                <span asp-validation-for="Input.Name"></span>
+                <label asp-for="Input.Code"></label>
+                <input asp-for="Input.Code" disabled>
             </div>
             <div>
-                <label asp-for="Input.Age"></label>
-                <input type="number" asp-for="Input.Age">
-                <span asp-validation-for="Input.Age"></span>
+                <label asp-for="Input.Type"></label>
+                <select asp-for="Input.Type" asp-items="Html.GetEnumSelectList<Core.Enums.ItemType>()"></select>
+                <span asp-validation-for="Input.Type"></span>
             </div>
             <div>
-                <label asp-for="Input.Email"></label>
-                <input asp-for="Input.Email" id="author-email-id" oninput="ChangeEmail(event)" />
-                <span class="loader d-none" id="email-loader"></span>
-                <span class="d-none field-validation-error" id="email-loader-error">This email is used</span>
-                <span asp-validation-for="Input.Email"></span>
+                <label asp-for="Input.DisplayName"></label>
+                <input asp-for="Input.DisplayName"/>
+                <span asp-validation-for="Input.DisplayName"></span>
             </div>
             <div>
-
-                <label asp-for="Input.Password"></label>
-                <input type="password" asp-for="Input.Password">
-                <span asp-validation-for="Input.Password"></span>
+                <label asp-for="Input.Department"></label>
+                <select asp-for="Input.Department" asp-items="Html.GetEnumSelectList<Core.Enums.ItemDepartment>()"></select>
+                <span asp-validation-for="Input.Department"></span>
                 <br>
             </div>
             <div>
-                <label asp-for="Input.ConfirmPassword"></label>
-                <input type="password" asp-for="Input.ConfirmPassword">
-                <span asp-validation-for="Input.ConfirmPassword"></span>
+                <label asp-for="Input.HSN"></label>
+                <input asp-for="Input.HSN">
+                <span asp-validation-for="Input.HSN"></span>
                 <br>
             </div>
             <div>
-                <input asp-for="Input.Id" />
+                <label asp-for="Input.BuyingUnit"></label>
+                <select asp-for="Input.BuyingUnit" asp-items="Html.GetEnumSelectList<Core.Enums.SmallestUnit>()"></select>
+                <span asp-validation-for="Input.BuyingUnit"></span>
+                <br>
             </div>
             <div>
-                <input type="submit" value="Login!">
+                <label asp-for="Input.BuyingUnitPrice"></label>
+                <input asp-for="Input.BuyingUnitPrice">
+                <span asp-validation-for="Input.BuyingUnitPrice"></span>
+                <br>
+            </div>
+            <div>
+                <label asp-for="Input.SellingUnit"></label>
+                <select asp-for="Input.BuyingUnit" asp-items="Html.GetEnumSelectList<Core.Enums.SmallestUnit>()"></select>
+                <span asp-validation-for="Input.SellingUnit"></span>
+                <br>
+            </div>
+            <div>
+                <label asp-for="Input.SellingUnitPrice"></label>
+                <input asp-for="Input.SellingUnitPrice">
+                <span asp-validation-for="Input.SellingUnitPrice"></span>
+                <br>
+            </div>
+            <div>
+                <label asp-for="Input.CGST"></label>
+                <input asp-for="Input.CGST">
+                <span asp-validation-for="Input.CGST"></span>
+                <br>
+            </div>
+            <div>
+                <label asp-for="Input.SGST"></label>
+                <input asp-for="Input.SGST">
+                <span asp-validation-for="Input.SGST"></span>
+                <br>
+            </div>
+            <div>
+                <label asp-for="Input.IGST"></label>
+                <input asp-for="Input.IGST">
+                <span asp-validation-for="Input.IGST"></span>
+                <br>
+            </div>
+          
+            <div>
+                <input type="submit" value="Save">
 
-            </div> *@
+            </div> 
         </div>
     </form>
 </div>
