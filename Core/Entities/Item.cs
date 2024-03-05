@@ -23,6 +23,6 @@ namespace Core.Entities
         public SmallestUnit? SellingUnit { get; set; }
         public double? SellingUnitPrice { get; set; }
         public int? TaxId { get; set; }
-        public ITax? Tax { get; set; }
+        public ITax? Taxes { get; set; }
     }
 }

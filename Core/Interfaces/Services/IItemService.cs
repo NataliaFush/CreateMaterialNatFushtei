@@ -10,6 +10,6 @@ namespace Core.Interfaces.Services
     {
         //IItem GetItemById(Guid id);
         bool CreateItem(IItem item);
-        //IEnumerable<IItem> GetAllItems();
+        IEnumerable<IItem> GetAllItems();
     }
 }

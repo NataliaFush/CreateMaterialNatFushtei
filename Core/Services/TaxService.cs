@@ -17,9 +17,6 @@ namespace Core.Services
         {
             this.taxRepository = taxRepository;
         }
-        public void CreateTax(ITax tax)
-        {
-            taxRepository.CreateTax(tax);
-        }
+        
     }
 }

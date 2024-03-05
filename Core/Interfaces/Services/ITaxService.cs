@@ -8,6 +8,6 @@ namespace Core.Interfaces.Services
 {
     public interface ITaxService
     {
-        void CreateTax(ITax tax);
+       
     }
 }

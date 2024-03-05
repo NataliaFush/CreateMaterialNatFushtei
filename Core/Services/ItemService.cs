@@ -23,5 +23,10 @@ namespace Core.Services
             item.Code = random.Next(10000000,99999999);
             return itemRepository.CreateItem(item);
         }
+        public IEnumerable<IItem> GetAllItems()
+        {
+            return itemRepository.GetAllItems();
+        }
+
     }
 }

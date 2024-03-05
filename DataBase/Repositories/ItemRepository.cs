@@ -1,5 +1,6 @@
 ﻿using Core.Interfaces;
 using Core.Interfaces.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace DataBase.Repositories
             return new Core.Entities.Item
             {
                 Id = item.Id,
+                Code = item.Code,
                 Type = item.Type,
                 DisplayName = item.DisplayName,
                 Department = item.Department,
@@ -40,7 +42,7 @@ namespace DataBase.Repositories
                 _myDbContext.Items.Add(new Models.Item
                 {
                     Id = item.Id,
-                    Code=item.Code,
+                    Code = item.Code,
                     Type = item.Type,
                     DisplayName = item.DisplayName,
                     Department = item.Department,
@@ -49,6 +51,12 @@ namespace DataBase.Repositories
                     BuyingUnitPrice = item.SellingUnitPrice,
                     SellingUnit = item.SellingUnit,
                     SellingUnitPrice = item.SellingUnitPrice,
+                    Tax = new Models.Tax
+                    {
+                        CGST = item.Taxes.CGST,
+                        SGST = item.Taxes.SGST,
+                        IGST = item.Taxes.IGST,
+                    }
                 });
                 _myDbContext.SaveChanges();
             }
@@ -60,7 +68,14 @@ namespace DataBase.Repositories
         }
         public IEnumerable<IItem> GetAllItems()
         {
-            return null;
+            var items = _myDbContext.Items.Include(x => x.Tax);
+
+            List<IItem> list = new();
+            foreach (var item in items)
+            {
+                if (item != null) list.Add(CastToIUser(item));
+            }
+            return list;
         }
     }
 }

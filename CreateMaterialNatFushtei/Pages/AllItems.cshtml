@@ -1,0 +1,44 @@
+﻿@page
+@model CreateMaterialNatFushtei.Pages.AllItemsModel
+@{
+}
+<link rel="stylesheet" href="~/css/all.css" asp-append-version="true" />
+<div class="text-center">
+    <table class="table-car car-table-main">
+        <thead style="background-color:#D988B9">
+            <tr>
+                <th>Code</th>
+                <th>Type</th>
+                <th>Display Name</th>
+                <th>Department</th>
+                <th>HSN</th>
+                <th>Buying Unit</th>
+                <th>Buying Unit Price</th>
+                <th>SellingUnit</th>
+                <th>SellingUnitPrice</th>
+                <th>CGST</th>
+                <th>SGST</th>
+                <th>IGST</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <th>@item.Code</th>
+                    <th>@item.Type</th>
+                    <th>@item.DisplayName</th>
+                    <th>@item.Department</th>
+                    <th>@item.HSN</th>
+                    <th>@item.BuyingUnit</th>
+                    <th>@item.BuyingUnitPrice</th>
+                    <th>@item.SellingUnit</th>
+                    <th>@item.SellingUnitPrice</th>
+                    <th>@item.Taxes.CGST </th>
+                    <th>@item.Taxes.SGST</th>
+                    <th>@item.Taxes.IGST</th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

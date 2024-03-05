@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Core.Interfaces.Services;
 using Core.Enums;
-using Core.Interfaces;
 using Core.Entities;
 
 namespace CreateMaterialNatFushtei.Pages
@@ -11,14 +10,11 @@ namespace CreateMaterialNatFushtei.Pages
     public class CreateItem : PageModel
     {
         protected readonly IItemService _itemService;
-        protected readonly ITaxService _taxService;
-
         public ResultModel Response { get; set; }
 
-        public CreateItem(IItemService itemService, ITaxService taxService)
+        public CreateItem(IItemService itemService)
         {
             _itemService = itemService;
-            _taxService = taxService;
         }
         public IEnumerable<ItemModel> Items { get; set; }
         [BindProperty(SupportsGet = true)]
@@ -46,7 +42,7 @@ namespace CreateMaterialNatFushtei.Pages
                     BuyingUnitPrice = Input.BuyingUnitPrice,
                     SellingUnit = Input.SellingUnit,
                     SellingUnitPrice = Input.SellingUnitPrice,
-                    Tax = new Tax() { 
+                    Taxes = new Tax() { 
                         CGST = Input.CGST,  
                         SGST = Input.SGST,
                         IGST = Input.IGST,
@@ -68,3 +64,4 @@ namespace CreateMaterialNatFushtei.Pages
         }
     }
 }
+

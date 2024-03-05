@@ -8,7 +8,6 @@ namespace Core.Interfaces.Repositories
 {
     public interface ITaxRepository
     {
-        bool CreateTax(ITax tax);
         IEnumerable<ITax> GetAllTaxes();
     }
 }

@@ -9,6 +9,6 @@ namespace Core.Interfaces.Repositories
     public interface IItemRepository
     {
         bool CreateItem(IItem item);
-        //IEnumerable<IItem> GetAllItems();
+        IEnumerable<IItem> GetAllItems();
     }
 }
