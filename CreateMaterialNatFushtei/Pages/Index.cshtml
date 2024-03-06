@@ -6,7 +6,7 @@
 
 <div class="text-center">
     <h1 class="display-4">Create Material</h1>
-    <form method="post" id="item" onsubmit="clearForm()">
+    <form method="post" id="item">
         @* <div asp-validation-summary="All"></div> *@
         <div>
             <div>
@@ -16,12 +16,12 @@
             <div>
                 <label asp-for="Input.Type"></label>
                 <select asp-for="Input.Type" asp-items="Html.GetEnumSelectList<Core.Enums.ItemType>()"></select>
-                <span asp-validation-for="Input.Type"></span>
+                <span asp-validation-for="Input.Type" style="color: red;"></span>
             </div>
             <div>
                 <label asp-for="Input.DisplayName"></label>
-                <input asp-for="Input.DisplayName"/>
-                <span asp-validation-for="Input.DisplayName"></span>
+                <input asp-for="Input.DisplayName" />
+                <span asp-validation-for="Input.DisplayName" style="color: red;"></span>
             </div>
             <div>
                 <label asp-for="Input.Department"></label>
@@ -32,13 +32,13 @@
             <div>
                 <label asp-for="Input.HSN"></label>
                 <input asp-for="Input.HSN">
-                <span asp-validation-for="Input.HSN"></span>
+                <span asp-validation-for="Input.HSN" style="color: red;"></span>
                 <br>
             </div>
             <div>
                 <label asp-for="Input.BuyingUnit"></label>
                 <select asp-for="Input.BuyingUnit" asp-items="Html.GetEnumSelectList<Core.Enums.SmallestUnit>()"></select>
-                <span asp-validation-for="Input.BuyingUnit"></span>
+                <span asp-validation-for="Input.BuyingUnit" style="color: red;"></span>
                 <br>
             </div>
             <div>
@@ -50,38 +50,36 @@
             <div>
                 <label asp-for="Input.SellingUnit"></label>
                 <select asp-for="Input.SellingUnit" asp-items="Html.GetEnumSelectList<Core.Enums.SmallestUnit>()"></select>
-                <span asp-validation-for="Input.SellingUnit"></span>
+                <span asp-validation-for="Input.SellingUnit" style="color: red;"></span>
                 <br>
             </div>
             <div>
                 <label asp-for="Input.SellingUnitPrice"></label>
                 <input asp-for="Input.SellingUnitPrice">
-                <span asp-validation-for="Input.SellingUnitPrice"></span>
+                <span asp-validation-for="Input.SellingUnitPrice" style="color: red;"></span>
                 <br>
             </div>
             <div>
                 <label asp-for="Input.CGST"></label>
                 <input asp-for="Input.CGST">
-                <span asp-validation-for="Input.CGST"></span>
+                <span asp-validation-for="Input.CGST" style="color: red;"></span>
                 <br>
             </div>
             <div>
                 <label asp-for="Input.SGST"></label>
                 <input asp-for="Input.SGST">
-                <span asp-validation-for="Input.SGST"></span>
+                <span asp-validation-for="Input.SGST" style="color: red;"></span>
                 <br>
             </div>
             <div>
                 <label asp-for="Input.IGST"></label>
                 <input asp-for="Input.IGST">
-                <span asp-validation-for="Input.IGST"></span>
+                <span asp-validation-for="Input.IGST" style="color: red;"></span>
                 <br>
             </div>
-          
             <div>
-                <input type="submit" value="Save" >
-
-            </div> 
+                <input type="submit" value="Save">
+            </div>
         </div>
     </form>
 </div>

@@ -11,7 +11,6 @@ namespace CreateMaterialNatFushtei.Pages
     {
         protected readonly IItemService _itemService;
         public ResultModel Response { get; set; }
-
         public CreateItem(IItemService itemService)
         {
             _itemService = itemService;
