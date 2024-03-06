@@ -13,6 +13,7 @@ namespace DataBase.Repositories
     public class ItemRepository : IItemRepository
     {
         protected readonly MyDbContext _myDbContext;
+
         public ItemRepository(MyDbContext myDbContext)
         {
             _myDbContext = myDbContext;
@@ -32,9 +33,15 @@ namespace DataBase.Repositories
                 BuyingUnitPrice = item.SellingUnitPrice,
                 SellingUnit = item.SellingUnit,
                 SellingUnitPrice = item.SellingUnitPrice,
+                Taxes = new Core.Entities.Tax
+                {
+                    Id = item.Tax.Id,
+                    CGST = item.Tax.CGST,
+                    SGST = item.Tax.SGST,
+                    IGST = item.Tax.IGST
+                }
             };
         }
-
         public bool CreateItem(IItem item)
         {
             try
@@ -53,9 +60,9 @@ namespace DataBase.Repositories
                     SellingUnitPrice = item.SellingUnitPrice,
                     Tax = new Models.Tax
                     {
-                        CGST = item.Taxes.CGST,
-                        SGST = item.Taxes.SGST,
-                        IGST = item.Taxes.IGST,
+                        CGST = item.Taxes?.CGST,
+                        SGST = item.Taxes?.SGST,
+                        IGST = item.Taxes?.IGST,
                     }
                 });
                 _myDbContext.SaveChanges();
